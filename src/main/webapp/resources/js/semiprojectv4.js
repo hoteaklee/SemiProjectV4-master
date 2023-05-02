@@ -48,7 +48,9 @@ const zipbtn = document.querySelector('#findzipbtn');
 const addrlist = document.querySelector('#addrlist');
 const sendzip = document.querySelector('#sendzip');
 const zipmodal = document.querySelector('#zipmodal');
+const zpmdbtn = document.querySelector('#zpmdbtn');
 
+const modal = new bootstrap.Modal(zipmodal,{});
 joinbtn?.addEventListener('click', ()=>{
     if (joinfrm.userid.value == '') alert('아이디를 입력하세요!!');
     else if (joinfrm.passwd.value == '') alert('비밀번호를 입력하세요!!');
@@ -63,6 +65,14 @@ joinbtn?.addEventListener('click', ()=>{
         location.href='/join/joinok';
     }
 
+});
+
+zpmdbtn?.addEventListener('click', ()=>{
+    while (addrlist.lastChild) {
+        addrlist.removeChild(addrlist.lastChild);   //글씨 초기화
+    }
+    dong.value ='';
+    modal.show();//모달 띄우기
 });
 
 const  showzipaddr = (jsons) => {
@@ -83,6 +93,10 @@ const  showzipaddr = (jsons) => {
 };
 
 zipbtn?.addEventListener('click',()=>{
+    if (dong.value === '') {
+        alert('검색할 동이름을 입력하세요~~!');
+        return;
+    }
     const url = '/join/zipcode?dong=' + dong.value;
     fetch(url).then(response => response.text()).then(text=>showzipaddr(text));
 });
