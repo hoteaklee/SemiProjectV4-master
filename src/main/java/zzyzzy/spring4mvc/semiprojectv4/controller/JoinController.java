@@ -2,6 +2,7 @@ package zzyzzy.spring4mvc.semiprojectv4.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import zzyzzy.spring4mvc.semiprojectv4.model.Member;
@@ -58,4 +59,34 @@ public class JoinController {
             ex.printStackTrace();
         }
     }
+
+    // 아이디 중복 검사(아이디 사용가능여부 검사)
+    // /join/checkuid?uid=아아디
+    // 사용가능 : 0
+    // 사용불가능 : 1
+    @ResponseBody
+    @GetMapping("/checkuid")
+    public void checkuid(String uid, HttpServletResponse res){
+        try {
+            // 아이디 사용 여부를 뷰없이 바로 응답으로 출력
+            res.getWriter().print( jnsrv.checkUserid(uid) );
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
