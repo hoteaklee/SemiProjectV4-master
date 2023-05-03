@@ -53,6 +53,7 @@ const email3 = document.querySelector('#email3');
 const userid = document.querySelector('#userid');
 const uidmsg = document.querySelector('#uidmsg');
 const pwdmsg = document.querySelector('#pwdmsg');
+const repwdmsg = document.querySelector('#repwdmsg');
 
 const modal = new bootstrap.Modal(zipmodal,{});
 joinbtn?.addEventListener('click', ()=>{
@@ -154,12 +155,24 @@ const styleCheckuid = (chkuid) => {
 };
 userid?.addEventListener('blur',()=>{
     if (userid.value === '') {
-        alert('중복 검사할 아이디를 입력하세요');
+        uidmsg.innerText ='6~16 자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다';
+        uidmsg.style.color = 'gray';
         return;
     }
     const url = '/join/checkuid?uid=' + userid.value;
     fetch(url).then(response => response.text())
                 .then(text=>styleCheckuid(text));
+});
+
+repasswd?.addEventListener('blur', ()=>{
+    let pmsg = '비밀번호가 일치하지 않습니다.';
+    pwdmsg.style.color = 'red';
+
+    if (repasswd.value === joinfrm.passwd.value){
+        pmsg ='사용가능한 비빌번호입니다.';
+        pwdmsg.style.color = 'blue';
+    }
+    pwdmsg.innerText = pmsg;
 });
 
 // ------------------------------- joinok
