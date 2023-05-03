@@ -142,6 +142,16 @@ dong?.addEventListener('keydown', (e)=>{
     }
 });
 
+const styleCheckuid = (chkuid) => {
+    let msg = '사용불가능한 아이디입니다.!!';
+    uidmsg.style.color = 'red';
+
+    if (chkuid === '0') {
+        msg = '사용가능한 아이디입니다.!!';
+        uidmsg.style.color = 'blue';
+    }
+    uidmsg.innerText = msg;
+};
 userid?.addEventListener('blur',()=>{
     if (userid.value === '') {
         alert('중복 검사할 아이디를 입력하세요');
@@ -149,7 +159,7 @@ userid?.addEventListener('blur',()=>{
     }
     const url = '/join/checkuid?uid=' + userid.value;
     fetch(url).then(response => response.text())
-                .then(text=>alert(text));
+                .then(text=>styleCheckuid(text));
 });
 
 // ------------------------------- joinok
