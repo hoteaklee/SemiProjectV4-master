@@ -2,6 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="main">
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
     <div class="mt-5">
         <i class="fa-solid fa-users fa-2xl"> 회원가입 </i>
         <hr>
@@ -162,7 +165,7 @@
                            for="g-recaptcha">자동가입방지</label>
                     <div class="col-3">
                         <div class="g-recaptcha"
-                             data-sitekey="6LdmIwgbAAAAAPO06Cyw44ZE0pkeDeMHEwVbgiM-"></div>
+                             data-sitekey="6Lc_4OskAAAAAB0qqZMfQQMY6JZLNjePv1nSMSGy"></div>
                         <input type="hidden" name="g-recaptcha" id="g-recaptcha">
                     </div>
                 </div>
@@ -185,6 +188,7 @@
             <input type="hidden" name="zipcode" id="zipcode">
             <input type="hidden" name="email" id="email">
             <input type="hidden" name="phone" id="phone">
+            <input type="hidden" name="checkuid" id="checkuid">
 
         </form>
 
