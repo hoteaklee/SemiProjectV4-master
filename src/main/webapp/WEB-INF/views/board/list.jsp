@@ -1,4 +1,6 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div id="main">
     <div class="mt-5">
@@ -44,102 +46,14 @@
                         <th>2023-5-3</th>
                         <th>1</th>
                         <th>1</th></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
-                    <tr><td>2</td>
-                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
-                        <td>이호택</td>
-                        <td>2023-5-2</td>
-                        <td>1</td>
-                        <td>2</td></tr>
+                    <c:forEach items="${bdlist}" var="bd">
+                    <tr><td>${bd.bno}</td>
+                        <td>${bd.title}</td>
+                        <td>${bd.userid}</td>
+                        <td>${fn:substring(bd.regdate,0,10)}</td>
+                        <td>${bd.thumbs}</td>
+                        <td>${bd.views}</td></tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>
