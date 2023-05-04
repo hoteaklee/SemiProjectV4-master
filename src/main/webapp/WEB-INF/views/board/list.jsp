@@ -2,11 +2,9 @@
 
 <div id="main">
     <div class="mt-5">
-        <i class="fa-solid fa-screwdriver"> 게시판 </i>
+        <i class="fa-solid fa-pen-to-square fa-2xl"> 게시판 </i>
         <hr>
     </div>
-
-
 
 
 </div>
