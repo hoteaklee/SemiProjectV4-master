@@ -6,17 +6,132 @@
         <hr>
     </div>
 
-    <div class="row">
+    <div class="row mt-5">
         <div class="offset-2 col-8 text-end">
         <button type="button" class="btn btn-light">
             <i class="fa fa-plus-circle"> </i> 새글쓰기</button>
         </div>
-    </div>
+    </div>  <%-- 새글쓰기--%>
 
-    <div class="row">
-        <div class="offset-2 col-8 text-end">
+    <div class="row mt-2 ">
+        <div class="offset-2 col-8">
+            <table class="table table-striped tbboarder">
+                <thead class="thbg">
+                    <tr><th style="width:7%">번호</th>
+                        <th>제목</th>
+                        <th style="width:13%">작성자</th>
+                        <th style="width:13%">작성일</th>
+                        <th style="width:7%">추천</th>
+                        <th style="width:7%">조회</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th>1</th>
+                        <th><span class="badge text-bg-danger">hot</span>
+                            석가탄신일,성탄절 대체공휴일 확정,,27~29일 사흘 연휴</th>
+                        <th>이호택</th>
+                        <th>2023-5-3</th>
+                        <th>1</th>
+                        <th>1</th></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                    <tr><td>2</td>
+                        <td>쓰고 싶은 기사 ~~~~내용~~~무~~~~</td>
+                        <td>이호택</td>
+                        <td>2023-5-2</td>
+                        <td>1</td>
+                        <td>2</td></tr>
+                </tbody>
+            </table>
         </div>
-    </div>
+    </div>  <%--게시판 (중앙)--%>
 
     <div class="row">
         <div class="offset-2 col-8 text-end">
@@ -37,7 +152,7 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div> <%-- 페이지 네이션--%>
 
 
 </div>
