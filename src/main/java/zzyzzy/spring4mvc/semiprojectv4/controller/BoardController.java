@@ -14,10 +14,10 @@ public class BoardController {
     @Autowired private BoardService bdsrv;
 
     @GetMapping("/list")
-    public ModelAndView list() {
+    public ModelAndView list(int cpg) {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("board/list.tiles");
-        mv.addObject("bdlist", bdsrv.readBoard());
+        mv.addObject("bdlist", bdsrv.readBoard(cpg));
 
         return mv;
     }

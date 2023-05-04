@@ -13,7 +13,7 @@ public class BoardDAOImpl implements BoardDAO{
     @Autowired private SqlSession sqlSession;//데이터 베이스 연결
 
     @Override
-    public List<Board> selectBoard() {
-        return sqlSession.selectList("board.selectBoard");
+    public List<Board> selectBoard(int stbno) {
+        return sqlSession.selectList("board.selectBoard", stbno);
     }
 }
