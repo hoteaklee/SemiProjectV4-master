@@ -94,7 +94,9 @@
             <nav>
                 <ul class="pagination justify-content-center">
 
-                    <a class="page-link" href="${pglink}${stpg}">처음</a></li>
+                    <c:if test="${cpg gt 1}">
+                    <a class="page-link" href="${pglink}1">처음</a></li>
+                    </c:if>
 
                     <c:if test="${cpg-1 gt 0}"><li class="page-item"></c:if> <%-- gt(그레잇트 덴 >) --%>
                     <c:if test="${cpg -1 le 0}"><li class="page-item disabled"></c:if> <%--0보다 작다면(le)--%>
@@ -104,16 +106,17 @@
                        <c:if test="${i le cntpg}"> <%-- 작거나 같으면 le --%>
                            <c:if test="${i ne cpg}"><li class="page-item"></c:if>
                            <c:if test="${i eq cpg}"><li class="page-item active"></c:if>
+                           <a class="page-link" href="${pglink}${i}">${i}</a></li>
                        </c:if>
-                    <a class="page-link" href="${pglink}${i}">${i}</a></li>
                    </c:forEach>
 
                     <c:if test="${(cpg+1) lt cntpg}"><li class="page-item"></c:if>
                     <c:if test="${(cpg+1) gt cntpg}"><li class="page-item disabled"></c:if>
-
                         <a class="page-link" href="${pglink}${cpg+1}">다음</a></li>
 
-                    <a class="page-link" href="${pglink}${cntpg}">끝</a></li>
+                    <c:if test="${cpg lt cntpg}">
+                        <a class="page-link" href="${pglink}${cntpg}">끝</a></li>
+                    </c:if>
                 </ul>
             </nav>
         </div>
