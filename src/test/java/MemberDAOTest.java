@@ -4,27 +4,28 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import zzyzzy.spring4mvc.semiprojectv4.dao.MemberDAO;
 import zzyzzy.spring4mvc.semiprojectv4.model.Member;
 
-
-
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/root-context.xml"})
 public class MemberDAOTest {
 
-    @Autowired
-    SqlSession sqlSession;
+    @Autowired SqlSession sqlSession;
 
     @Test
-    public void setSqlSession(){
+    public void selectLogin() {
         Member m = new Member();
         m.setUserid("asd123");
         m.setPasswd("asd123");
+        assertEquals(1, (int)sqlSession.selectOne("member.selectLogin", m));
 
-       assertEquals(1, (int)sqlSession.selectOne("member.selectLogin",m));
+        m.setUserid("abc123a");
+        m.setPasswd("abc123a");
+        assertEquals(0, (int)sqlSession.selectOne("member.selectLogin", m));
     }
 
 }
