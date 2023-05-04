@@ -22,6 +22,7 @@ public class BoardController {
         mv.addObject("cpg", cpg); /* 현재페이지 받아옴*/
         // startPage = ((cpg - 1) / 10) * 10 + 1
         mv.addObject("stpg", ((cpg - 1) / 10) * 10 + 1);
+        mv.addObject("cntpg", bdsrv.countBoard()); /*총 페이지수*/
 
         return mv;
     }
