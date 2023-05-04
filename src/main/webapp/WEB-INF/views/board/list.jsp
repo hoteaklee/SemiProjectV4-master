@@ -7,7 +7,19 @@
     </div>
 
     <div class="row mt-5">
-        <div class="offset-2 col-8 text-end">
+        <div class="row offset-2 col-6">
+            <div class="col-3"><select class="form-select" id="findtype">
+                <option value="subject">제목</option>
+                <option value="sbjcont">제목+내용</option>
+                <option value="contents">내용</option>
+                <option value="userid">작성자</option>
+            </select></div>
+            <div class="col-4"><input type="text" class="form-control" id="findkey"></div>
+            <div class="col-3">
+            <button type="button" class="btn btn-light">
+                <i class="fa-solid fa-magnifying-glass"> </i> 검색하기</button></div>
+        </div>
+        <div class=" col-2 text-end">
         <button type="button" class="btn btn-light">
             <i class="fa fa-plus-circle"> </i> 새글쓰기</button>
         </div>
@@ -131,7 +143,7 @@
                 </tbody>
             </table>
         </div>
-    </div>  <%--게시판 (중앙)--%>
+    </div>  <%--게시판 (중앙 )--%>
 
     <div class="row">
         <div class="offset-2 col-8 text-end">
