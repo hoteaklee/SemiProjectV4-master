@@ -46,7 +46,8 @@
                 <option value="content">내용</option>
                 <option value="userid">작성자</option>
             </select></div>
-            <div class="col-4"><input type="text" class="form-control" id="findkey"></div>
+            <div class="col-4"><input type="text" class="form-control" id="findkey"
+                value="${param.fkey}"></div><%--param를 쓰면 주소창에있는 값을 가져옴--%>
             <div class="col-3">
             <button type="button" class="btn btn-light" id="findbtn">
                 <i class="fa-solid fa-magnifying-glass"> </i> 검색하기</button></div>

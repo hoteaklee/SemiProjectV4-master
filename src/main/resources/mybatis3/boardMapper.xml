@@ -16,11 +16,11 @@
 
         <if test="ftype!= 'titcont' ">
             /* fkey 로 시작하는거 검색*/
-        where ${ftype} like concat(#{fkey}, '%') </if>/* ftype은 컬럼명이라 $를 쓴다*/
+        where ${ftype} like concat('%',#{fkey}, '%') </if>/* ftype은 컬럼명이라 $를 쓴다*/
 
         <if test="ftype == 'titcont'">
-        where title like concat(#{fkey}, '%') or
-              content like concat(#{fkey}, '%')</if> /* 제목, 내용 검색*/
+        where title like concat('%',#{fkey}, '%') or
+              content like concat('%',#{fkey}, '%')</if> /* 제목, 내용 검색*/
 
         order by bno desc limit #{stbno}, 25
     </select>
@@ -30,8 +30,24 @@
         select ceil(count(bno)/25) cnt from board
     </select>
 
+    <select id="countFindBoard" statementType="PREPARED" parameterType="map"
+            resultType="int">
+        select ceil(count(bno)/25) cnt from board
+        <if test="ftype!= 'titcont' ">
+            where ${ftype} like concat(#{fkey}, '%') </if>/* ftype은 컬럼명이라 $를 쓴다*/
+
+        <if test="ftype == 'titcont'">
+            where title like concat('%',#{fkey}, '%') or
+            content like concat('%',#{fkey}, '%')</if>
+    </select>
+
 
 
 
 
 </mapper>
+
+
+
+
+
