@@ -26,4 +26,31 @@ public class BoardController {
 
         return mv;
     }
+
+    @GetMapping("/find")    //검색 처리
+    public ModelAndView find(int cpg, String ftype, String fkey){
+        ModelAndView mv = new ModelAndView();
+
+        mv.addObject("bdlist",bdsrv.readBoard(cpg,ftype,fkey));
+        mv.addObject("cpg", cpg); /* 현재페이지 받아옴*/
+        mv.addObject("stpg", ((cpg - 1) / 10) * 10 + 1);
+        mv.addObject("cntpg", bdsrv.countBoard(ftype,fkey)); /*총 페이지수*/
+        mv.setViewName("board/list.tiles");
+        return mv;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
