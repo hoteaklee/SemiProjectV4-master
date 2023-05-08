@@ -30,7 +30,13 @@
     // endPage = startPage + 10 - 1
 %>
 
+<%-- 검색기능 작동하지 않는 목록조회 --%>
 <c:set var="pglink" value="/board/list?cpg=" /> <%-- 공통으로 들어가는걸 변수에 담아서 씀--%>
+
+<%-- 검색기능 작동하는 목록조회 --%>
+<c:if test="${not empty param.fkey}">
+<c:set var="pglink" value="/board/find?ftype=${param.ftype}&fkey=${param.fkey}&cpg=" />
+</c:if>
 
 <div id="main">
     <div class="mt-5">
