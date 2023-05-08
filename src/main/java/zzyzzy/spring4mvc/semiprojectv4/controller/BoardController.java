@@ -3,8 +3,10 @@ package zzyzzy.spring4mvc.semiprojectv4.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import zzyzzy.spring4mvc.semiprojectv4.model.Board;
 import zzyzzy.spring4mvc.semiprojectv4.service.BoardService;
 
 @Controller
@@ -37,6 +39,25 @@ public class BoardController {
         mv.addObject("cntpg", bdsrv.countBoard(ftype,fkey)); /*총 페이지수*/
         mv.setViewName("board/list.tiles");
         return mv;
+    }
+
+    @GetMapping("/write")
+    public String write(){
+        return "board/write.tiles";
+    }
+
+    @PostMapping("/write")
+    public String writeok(Board bd) {
+        String viewPage = "error.tiles";
+
+        if (bdsrv.newBoard(bd))
+            viewPage = "redirect:/board/list?cpg=1";
+        return viewPage;
+    }
+
+    @GetMapping("/view")
+    public String view(){
+        return "board/view.tiles";
     }
 
 

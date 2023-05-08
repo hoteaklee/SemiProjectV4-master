@@ -22,27 +22,28 @@
 
     <div class="row mt-2 offset-2 col-8">
         <form class="card card-body bg-light" name="bdfrm" id="bdfrm">
+
             <div class="row">
                 <label class="col-3 col-form-label text-danger text-end" for="title">제목</label>
                 <div class="col-6">
                     <input type="text" name="title" id="title"
                         class="form-control border-danger">
                 </div>
-            </div>
+            </div> <%--제목--%>
             <div class="row mt-2">
                 <label class="col-3 col-form-label text-danger text-end" for="userid">작성자</label>
                 <div class="col-6">
                     <input type="text" name="userid" id="userid" readonly
                            class="form-control border-danger bg-light" value="asd123">
                 </div>
-            </div>
+            </div><%--작성자--%>
             <div class="row mt-2">
                 <label class="col-3 col-form-label text-danger text-end" for="content">본문</label>
                 <div class="col-6">
                     <textarea name="content" id="content"
                               class="form-control border-danger" rows="15"></textarea>
                 </div>
-            </div>
+            </div><%--본문--%>
 
             <div class="row mt-2">
                 <label class="col-3 col-form-label text-danger text-end" for="g-recaptcha">자동가입방지</label>
@@ -50,7 +51,7 @@
                    <div class="g-recaptcha" data-sitekey="6Lc_4OskAAAAAB0qqZMfQQMY6JZLNjePv1nSMSGy"></div>
                     <input type="hidden" name="grecaptcha" id="g-recaptcha">
                 </div>
-            </div>
+            </div><%--리캡챠--%>
 
             <div class="row mt-4 justify-content-center">
                 <hr class="w-75">
@@ -60,7 +61,7 @@
                 <button type="button" id="cancelbtn" class="btn btn-danger">
                     <i class="fa fa-remove"> </i>입력취소</button>
                 </div>
-            </div>
+            </div><%--버튼--%>
 
         </form>
     </div>

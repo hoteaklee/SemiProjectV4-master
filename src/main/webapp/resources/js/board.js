@@ -7,3 +7,16 @@ findbtn?.addEventListener('click', ()=>{
     let query = `/board/find?ftype=${findtype.value}&fkey=${findkey.value}&cpg=1`;
     location.href = query;
 });
+
+const writebtn = document.querySelector("#writebtn");
+writebtn?.addEventListener('click',()=>{
+    const bdfrm = document.forms.bdfrm;
+    if (bdfrm.title.value === '') alert('제목을 입력해주세요');
+    else if (bdfrm.content.value === '') alert('본문을 작성해주세요');
+    else if (grecaptcha.getResponse() === '') alert('자동가입장지를 확인해주세요');
+    else {
+        bdfrm.method = 'post';
+        bdfrm.submit();
+    }
+
+});

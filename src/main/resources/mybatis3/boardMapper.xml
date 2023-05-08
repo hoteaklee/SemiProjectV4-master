@@ -21,7 +21,6 @@
         <if test="ftype == 'titcont'">
         where title like concat('%',#{fkey}, '%') or
               content like concat('%',#{fkey}, '%')</if> /* 제목, 내용 검색*/
-
         order by bno desc limit #{stbno}, 25
     </select>
 
@@ -40,6 +39,13 @@
             where title like concat('%',#{fkey}, '%') or
             content like concat('%',#{fkey}, '%')</if>
     </select>
+
+    <!--새글쓰기-->
+    <insert id="insertBoard" statementType="PREPARED"
+        parameterType="zzyzzy.spring4mvc.semiprojectv4.model.Board">
+        insert into board (title,userid,content) values
+            (#{title},#{userid},#{content})
+    </insert>
 
 
 
